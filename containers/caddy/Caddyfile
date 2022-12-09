@@ -1,0 +1,7 @@
+{
+  email vortex@free2air.net
+}
+
+zembla.zenr.io {
+  reverse_proxy portainer:9000
+}
