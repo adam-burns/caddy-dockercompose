@@ -1,0 +1,17 @@
+1. create new DNS A or AAAA records for HTTPS to be served
+
+$ nsupdate -k Kzembla.zenr.io.+015+56161.private 
+> update add zembla.zenr.io           600 AAAA 2a01:4f8:c17:3dd5:8000::10
+> update add portainer.zembla.zenr.io 600 AAAA 2a01:4f8:c17:3dd5:8000::10
+> update add test.zembla.zenr.io      600 AAAA 2a01:4f8:c17:3dd5:8000::10
+> send
+> quit
+
+2. edit/customise docker-compose.yaml
+
+3. edit/customise container/caddy/Caddyfile for each DNS A or AAA records to be served
+
+4. raise caddy and containers to be reversed proxied with HTTPS
+
+docker-compose up -d
+
