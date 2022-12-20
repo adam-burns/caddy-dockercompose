@@ -1,7 +1,14 @@
+# comment
 {
-  email vortex@free2air.net
+        email vortex@free2air.net
 }
 
 zembla.zenr.io {
-  reverse_proxy portainer:9000
+        respond "It Works!"
+}
+test.zembla.zenr.io {
+        respond "This Works too!"
+}
+portainer.zembla.zenr.io {
+        reverse_proxy portainer:9000
 }
