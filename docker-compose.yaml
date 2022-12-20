@@ -20,6 +20,11 @@ services:
       - caddy
 
   # example application for reverse proxy: see containers/caddy/Caddyfile
+  # comment out and add any container that needs https serving, making sure 
+  # networks:
+  #   - caddy
+  # is included to allow proxy to work
+  #
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
