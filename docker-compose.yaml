@@ -1,3 +1,4 @@
+# comment
 version: '3.3'
 networks:
   caddy:
@@ -11,7 +12,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/blue/containers/portainer/portainer-data:/data
+        #      - ${PWD}/containers/portainer/portainer-data:/data
+      - /home/vortex/src/docker/caddy-docker/containers/portainer/portainer-data:/data
     networks:
       - caddy
     ports:
@@ -25,10 +27,14 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /home/blue/containers/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - /home/blue/containers/caddy/site:/srv
-      - /home/blue/containers/caddy/caddy_data:/data
-      - /home/blue/containers/caddy/caddy_config:/config
+      #      - ${PWD}/containers/caddy/Caddyfile:/etc/caddy/Caddyfile
+      #      - ${PWD}/containers/caddy/site:/srv
+      #      - ${PWD}/containers/caddy/caddy_data:/data
+      #      - ${PWD}/containers/caddy/caddy_config:/config
+      - /home/vortex/src/docker/caddy-docker/containers/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - /home/vortex/src/docker/caddy-docker/containers/caddy/site:/srv
+      - /home/vortex/src/docker/caddy-docker/containers/caddy/caddy_data:/data
+      - /home/vortex/src/docker/caddy-docker/containers/caddy/caddy_config:/config
     networks:
       - caddy
 volumes:
