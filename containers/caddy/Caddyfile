@@ -6,8 +6,15 @@
 zembla.zenr.io {
         respond "It Works!"
 }
+xn--dr8h.zembla.zenr.io {
+        respond "👾.zembla.zenr.io Space Invaders!"
+}
+xn--cr8h.zembla.zenr.io {
+        respond "👽.zembla.zenr.io Aliens!"
+}
 test.zembla.zenr.io {
-        respond "This Works too!"
+        root * /srv
+        file_server browse
 }
 portainer.zembla.zenr.io {
         reverse_proxy portainer:9000
