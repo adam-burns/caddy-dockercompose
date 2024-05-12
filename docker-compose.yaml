@@ -19,26 +19,26 @@ services:
     networks:
       - caddy
 
-  # example application for reverse proxy: see containers/caddy/Caddyfile
-  # comment out and add any container that needs https serving, making sure 
-  # networks:
-  #   - caddy
-  # is included to allow proxy to work
-  #
-  portainer:
-    image: portainer/portainer-ce:latest
-    container_name: portainer
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./containers/portainer/portainer-data:/data
-    networks:
-      - caddy
-    ports:
-      - 9000:9000
+      #  # example application for reverse proxy: see containers/caddy/Caddyfile
+      #  # comment out and add any container that needs https serving, making sure
+      #  # networks:
+      #  #   - caddy
+      #  # is included to allow proxy to work
+      #  #
+      #  portainer:
+      #    image: portainer/portainer-ce:latest
+      #    container_name: portainer
+      #    restart: unless-stopped
+      #    security_opt:
+      #      - no-new-privileges:true
+      #    volumes:
+      #      - /etc/localtime:/etc/localtime:ro
+      #      - /var/run/docker.sock:/var/run/docker.sock:ro
+      #      - ./containers/portainer/portainer-data:/data
+      #    networks:
+      #      - caddy
+      #    ports:
+      #      - 9000:9000
       
 
 volumes:
