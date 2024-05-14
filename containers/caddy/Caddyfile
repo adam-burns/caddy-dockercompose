@@ -55,3 +55,37 @@ test.zembla.zenr.io {
 # portainer.zembla.zenr.io {
 #         reverse_proxy portainer:9000
 # }
+map.zembla.zenr.io {
+        root * /srv
+        templates
+#	@inlineFiles {
+#		path ^.*\.(tiff|mp4)$
+#	}
+#	header @inlineFiles {
+#		Content-Dispostion inline
+#	}
+	@mp4 {
+		path *.mp4
+#		path ^.*\.(mpeg|MPG|mpg|mp4)$
+	}
+	header @mp4 {
+		Content-Type video/mp4
+		Content-Disposition inline
+	}
+	@tiff {
+		path *.tiff
+	}
+	header @tiff {
+		Content-Type image/tiff
+		Content-Disposition inline
+	}
+        file_server browse
+}
+dev.sig0namectl.zembla.zenr.io {
+        reverse_proxy localhost:1313
+}
+src.dev.sig0namectl.zembla.zenr.io {
+        root * /srv
+        templates
+        file_server browse
+}
