@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     container_name: caddy
     ports:
-      - 80:80
+      # - 80:80
       - 443:443
     volumes:
       - ./containers/caddy/Caddyfile:/etc/caddy/Caddyfile
