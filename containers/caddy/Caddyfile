@@ -20,3 +20,37 @@ ns1.free2air.org, doh.zenr.io {
   }
   respond @options 204
 }
+google.zenr.io {
+  reverse_proxy /dns-query* https://8.8.8.8:443 {
+    header_up Host {upstream_hostport}
+    # transport http {
+    #   tls_insecure_skip_verify
+    # }
+  }
+  header {
+    Access-Control-Allow-Headers *
+    Access-Control-Allow-Methods *
+    Access-Control-Allow-Origin *
+  }
+  @options {
+    method OPTIONS
+  }
+  respond @options 204
+}
+quad9.zenr.io {
+  reverse_proxy /dns-query* https://9.9.9.9:443 {
+    header_up Host {upstream_hostport}
+    # transport http {
+    #   tls_insecure_skip_verify
+    # }
+  }
+  header {
+    Access-Control-Allow-Headers *
+    Access-Control-Allow-Methods *
+    Access-Control-Allow-Origin *
+  }
+  @options {
+    method OPTIONS
+  }
+  respond @options 204
+}
