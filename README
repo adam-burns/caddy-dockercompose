@@ -1,3 +1,5 @@
+README
+
 1. create new DNS A or AAAA records for HTTPS to be served
 
 $ nsupdate -k Kzembla.zenr.io.+015+56161.private 
